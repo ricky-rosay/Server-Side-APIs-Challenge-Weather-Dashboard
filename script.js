@@ -135,3 +135,35 @@ function currentWeather(userInput) {
                 localStorage.setItem("Saved City", JSON.stringify(citiesArray));
             
             }
+
+
+            function lastSearch () {
+                buttonList.empty()
+                for (var i = 0; i < citiesArray.length; i ++) {
+                    var newButton = $("<button>").attr("type", "button").attr("class","savedBtn btn btn-secondary btn-lg btn-block");
+                    newButton.attr("data-name", citiesArray[i])
+                    newButton.text(citiesArray[i]);
+                    buttonList.prepend(newButton);
+                }
+                $(".savedBtn").on("click", function(event){
+                    event.preventDefault();
+                    var userInput = $(this).data("name");
+                    currentWeather(userInput);
+                    forecast(userInput);
+                })
+            
+            }
+            
+            $(".btn").on("click", function (event){
+                event.preventDefault();
+                if ($("#searchInput").val() === "") {
+                alert("Please type a userInput to know the current weather");
+                } else
+                var userInput = $("#searchInput").val().trim().toLowerCase();
+                currentWeather(userInput);
+                forecast(userInput);
+                storeData();
+                lastSearch();
+                $("#searchInput").val("");
+            
+            })
