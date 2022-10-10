@@ -114,3 +114,24 @@ function currentWeather(userInput) {
                 })
     
             }
+
+            function storeData (userInput) {
+                var userInput = $("#searchInput").val().trim().toLowerCase();
+                var containsCity = false;
+            
+                if (citiesArray != null) {
+            
+                    $(citiesArray).each(function(x) {
+                        if (citiesArray[x] === userInput) {
+                            containsCity = true;
+                        }
+                    });
+                }
+            
+                if (containsCity === false) {
+                    citiesArray.push(userInput);
+                }
+            
+                localStorage.setItem("Saved City", JSON.stringify(citiesArray));
+            
+            }
