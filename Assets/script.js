@@ -103,7 +103,7 @@ function currentWeather(userInput) {
                 var newImg = $("<img>").attr("class", "card-img-top").attr("src", "https://openweathermap.org/img/wn/" + forecastIcon[i] + "@2x.png");
                 newCardBody.append(newImg);
     
-                var newPTemp = $("<p>").attr("class", "card-text").text("Temp: " + Math.floor(forecastTemp[i]) + "ºC");
+                var newPTemp = $("<p>").attr("class", "card-text").text("Temp: " + Math.floor(forecastTemp[i]) + "ºF");
                 newCardBody.append(newPTemp);
     
                 var newPHum = $("<p>").attr("class", "card-text").text("Humidity: " + forecastHum[i] + " %");
