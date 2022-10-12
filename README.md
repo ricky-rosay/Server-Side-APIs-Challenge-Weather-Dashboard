@@ -4,6 +4,14 @@
 
 Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Developers are often tasked with retrieving data from another application's API and using it in the context of their own. This is a weather dashboard that uses the 5 day weather forecast to generate weather in whatever city you choose. Local storage stores previous cities you have searched for in the past.
 
+## Live URL:
+
+https://ricky-rosay.github.io/Server-Side-APIs-Challenge-Weather-Dashboard/
+
+## GitHub URL:
+
+https://github.com/ricky-rosay/Server-Side-APIs-Challenge-Weather-Dashboard
+
 ## Usage
 
 ![front page dashboard](./Images/front-dashboard.png)
