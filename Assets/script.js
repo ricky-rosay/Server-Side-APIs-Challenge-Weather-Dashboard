@@ -13,7 +13,7 @@ var forecastIcon = {};
 var forecastTemp = {};
 var forecastHum = {};
 var today = moment().format('DD' + "/" + 'MM' + '/' + 'YYYY');
-var APIKey = "&units=metric&APPID=b0d9f95a725de4686ccefd028da0f26c";
+var APIKey = "&units=imperial&APPID=b0d9f95a725de4686ccefd028da0f26c";
 var url =  "https://api.openweathermap.org/data/2.5/weather?q=";
 var citiesArray = JSON.parse(localStorage.getItem("Saved City")) || [];
 
@@ -44,7 +44,7 @@ function currentWeather(userInput) {
         var newImgMain = $("<img>").attr("class", "card-img-top").attr("src", "https://openweathermap.org/img/wn/" + icon + "@2x.png");
         mainIcon.append(newImgMain);
         cityResultText.text(cityInfo + ", " + country + " " + today);
-        tempResultText.text("Temperature: " + temp + " ºC");
+        tempResultText.text("Temperature: " + temp + " ºF");
         humidityResult.text("Humidity: " + humidity + " %");
         windResultText.text("Wind Speed: " + wind + " MPH");
         $.ajax({
@@ -75,7 +75,7 @@ function currentWeather(userInput) {
         dayForecast.empty();
         rowCards.empty();
         var fore5 = $("<h2>").attr("class", "forecast").text("5-Day Forecast: "); 
-        var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + userInput + "&units=metric&APPID=b0d9f95a725de4686ccefd028da0f26c";
+        var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + userInput + "&units=imperial&APPID=b0d9f95a725de4686ccefd028da0f26c";
         $.ajax({
             url: forecastURL,
             method: "GET"
